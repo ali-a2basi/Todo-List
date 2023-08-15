@@ -1,9 +1,12 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Task manager UI</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title><?=siteTitle?></title>
+  <link rel="stylesheet" href="<?=baseUrl?>assets/css/style.css">
 
 </head>
 <body>
@@ -72,7 +75,7 @@
 </div>
 <!-- partial -->
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script  src="assets/js/script.js"></script>
+  <script  src=""<?=baseUrl?>assets/js/script.js"></script>
 
 </body>
 </html>

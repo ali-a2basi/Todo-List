@@ -1,0 +1,22 @@
+{
+    "name": "ali/7todo",
+    "description": "Task Manager with (Ajax, php, MySql)",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ali\\7todo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ALI ABBASI",
+            "email": "msngss111@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "hekmatinasser/verta": "^8.3",
+        "fakerphp/faker": "^1.23"
+    }
+}
