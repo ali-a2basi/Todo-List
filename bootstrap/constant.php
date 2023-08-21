@@ -2,4 +2,8 @@
 
 define("siteTitle", "Task_Project");
 define("baseUrl", "http://localhost/PHP/Project/7Todo/");
-define("basePath", "imp");
+define("basePath", "C:/xampp/htdocs/PHP/Project/7Todo/");
+
+
+
+

@@ -1,8 +1,8 @@
 <?php
 
-$dataBaseConfig = array(
-    "host" => "localhost",
-    "user" => "root",
-    "pass" => "",
-    "dbName" => "tasks"   
-);
+$dataBaseConfig = (object)[
+    'host' => 'localhost',
+    'user' => 'root',
+    'pass' => '',
+    'db' => 'task'
+];
