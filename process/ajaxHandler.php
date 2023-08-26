@@ -19,31 +19,43 @@ if (!isset($_POST['action']) || empty($_POST['action'])){
 
 switch($_POST['action']){
 
-    case "addFolders":
+    case "addFolder":
         if(!isset($_POST['folderName']) || strlen($_POST['folderName'])<3 ){
             echo "Folder name must contain at least two characters";
             die();
 
         }
-        addFolder($_POST['folderName']);
-        $folders = getfolders();
-        $sql = "ALTER TABLE folder AUTO_INCREMENT = 1";
-        $pdo->query($sql);
+    echo addFolder($_POST['folderName']);
+    
+
 
         
     break;
 
     case "addTask":
+        
+
         if(!isset($_POST['taskTitle']) || strlen($_POST['taskTitle'])<5){
 
-            echo"Task title must contain at least 5 characters";
-            die();
+            echo 'task title must include at least five characters';
+
         }
 
-        addTask($_POST['taskTitle']);
-        $sql = "ALTER TABLE folder AUTO_INCREMENT = 1";
-        $pdo->query($sql);
+        echo addTask($_POST['taskTitle'], $_POST['folderId']);
+        
 
+    break;
+    
+
+    case "doneSwitch":
+        $taskId = $_POST['taskId'];
+        if(!isset($_POST['taskId']) || is_numeric($_POST)){
+
+            echo 'this task-id is not selected or it does not exist at all';
+
+        }
+
+        doneSwitch($taskId);
     break;
 
     default:

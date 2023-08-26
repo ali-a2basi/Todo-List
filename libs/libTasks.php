@@ -2,7 +2,7 @@
 
 function getCurrentUserId(){
 
-    return 1;
+    return $_SESSION['login']->id;
 }
 function addFolder($folderName){
 
@@ -11,8 +11,9 @@ function addFolder($folderName){
     $sql = "INSERT INTO folder (name, userID)
     VALUES(:folderName,:userID)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':folderName'=>$folderName, ':userID'=>$currentUserId]);
+    $stmt->execute([':folderName' =>$folderName, ':userID'=>$currentUserId]);
     return $stmt->rowCount();
+    
     
 }
 
@@ -67,18 +68,36 @@ function removeTask($taskDeletedId){
 }
 
 
-function addTask($taskTitle){
+function addTask($taskTitle, $folderId){
 
     
     global $pdo;
     $currentUserId = getCurrentUserId();
-    $sql = "INSERT INTO task (title, userID)
-    VALUES(:taskTitle,:userID)";
+    $sql = "INSERT INTO task (title, userID, folderId)
+    VALUES(:taskTitle,:userID, :folderId)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':taskTitle'=>$taskTitle, ':userID'=>$currentUserId]);
+    $stmt->execute([':taskTitle'=>$taskTitle, ':userID'=>$currentUserId, ':folderId'=>$folderId]);
     return $stmt->rowCount();
     
 
+}
+
+function doneSwitch ($taskId){
+
+    global $pdo;
+    $currentUserId = getCurrentUserId();
+    $sql = 'UPDATE task SET isDone = 1 - isDone WHERE  id = :id and userID = :userId';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':id'=>$taskId, ':userId'=>$currentUserId]);
+    $stmt->rowCount();
+
+}
+
+
+
+function getUser(){
+
+    //
 }
 
 

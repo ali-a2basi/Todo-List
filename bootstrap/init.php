@@ -1,6 +1,5 @@
 <?php
-
-use Faker\Factory;
+session_start();
 
 include 'config.php';
 include 'constant.php';
@@ -13,10 +12,10 @@ try {
    echoAndDie('Connection failed: ' . $e->getMessage());
 }
 
-
-
 include basePath . 'libs/libAuth.php';
 include basePath .'libs/libTasks.php';
+
+
 
 
 

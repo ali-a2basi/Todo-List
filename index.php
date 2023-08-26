@@ -3,7 +3,10 @@
 include "bootstrap/init.php";
 
 
+if(!isLoggedIn()){
 
+    header("Location: http://localhost/PHP/Project/7Todo/auth.php");
+}
 
 
 if(isset($_GET['folderDeleteId']) && is_numeric($_GET['folderDeleteId'])){
@@ -21,6 +24,8 @@ if(isset($_GET['folderDeleteId']) && is_numeric($_GET['folderDeleteId'])){
 
 $folders = getFolders();
 
+
+
 if(isset($_GET['taskDeletedId']) && is_numeric($_GET['taskDeletedId'])){
     global $pdo;
 
@@ -30,8 +35,13 @@ if(isset($_GET['taskDeletedId']) && is_numeric($_GET['taskDeletedId'])){
     redirection();
 }
 
+if(!$folders){
+
+    global $pdo;
+    $sql = "TRUNCATE TABLE task";
+    $pdo->query($sql);
+}
+
 $tasks = getTasks();
-
-
 
 include "template/tp-index.php";

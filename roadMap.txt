@@ -1,9 +1,0 @@
-assets 	folder 	contain 	cssFolder->style.css
-				jsFolder->script.js
-				fonts->fonts
-				imgFolder->images	
-				vender->plugin
-
-
-templateFolder tpl or view
-html files

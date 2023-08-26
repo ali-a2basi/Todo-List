@@ -4,6 +4,17 @@ function echoAndDie($text){
     die();
 }
 
+function messageFailed($text, $cssClass = 'info'){
+    echo "<div class = '$cssClass' style='padding: 30px; width: 80%; margin: 50px auto; background: #f9dede; border: 1px solid #cca4a4; color: #521717; border-radius: 5px; font-family: sans-serif;text-align:center;'>$text</div>";;
+    
+}
+
+function messageSuccessfully($text, $cssClass = 'info'){
+    echo "<div class = '$cssClass' style='padding: 30px; width: 80%; margin: 50px auto; background: #9db99c; border: 1px solid #cca4a4; color: #090f08; border-radius: 5px; font-family: sans-serif;text-align:center;'>$text</div>";;
+    
+}
+
+
 function redirection(){
 
     $redirect = header('Location: http://localhost/PHP/Project/7Todo/');
@@ -27,4 +38,10 @@ function dd($var){
     var_dump($var);
     echo "</pre>";
 }
+
+
+function siteUrl($uri=''){
+    return baseUrl.$uri;
+}
+
 
