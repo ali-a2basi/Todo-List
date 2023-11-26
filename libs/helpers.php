@@ -17,7 +17,7 @@ function messageSuccessfully($text, $cssClass = 'info'){
 
 function redirection(){
 
-    $redirect = header('Location: http://localhost/PHP/Project/7Todo/');
+    $redirect = header('Location: http://localhost/learn.php/7Todo/');
     echo $redirect;
     exit();
     

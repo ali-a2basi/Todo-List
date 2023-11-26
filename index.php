@@ -44,4 +44,6 @@ if(!$folders){
 
 $tasks = getTasks();
 
+$user = getLoggedInData();
+
 include "template/tp-index.php";
